@@ -21,7 +21,10 @@ ADD config/nobody/ /home/nobody/
 
 # make executable and run bash scripts to install app
 RUN chmod +x /root/*.sh && \
-	/bin/bash /root/install.sh
+	/bin/bash /root/install.sh \
+	sed -i 's/en_US.UTF-8/en_GB.UTF-8/g' /usr/sbin/filebot \
+	sed -i 's/java-8-openjdk\/bin\/java/java-8-openjdk\/jre\/bin\/java/g' /usr/sbin/filebot \
+	chown nobody:users -R /home/nobody/.config
 
 # docker settings
 #################
