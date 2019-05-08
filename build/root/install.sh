@@ -33,7 +33,7 @@ fi
 ####
 
 # define aur packages
-aur_packages="filebot"
+aur_packages="filebot powershell"
 
 # call aur install script (arch user repo)
 source /root/aur.sh
